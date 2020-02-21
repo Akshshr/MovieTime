@@ -11,7 +11,6 @@ import com.bumptech.glide.request.RequestOptions
 import com.kotlinplay.R
 import com.kotlinplay.api.model.response.Season
 import com.kotlinplay.api.model.response.Show
-import com.kotlinplay.app.util.FALLBACK_IMAGE
 import com.kotlinplay.databinding.RowSeasonBinding
 import rx.Observable
 import rx.subjects.PublishSubject
@@ -43,8 +42,8 @@ class SeasonsAdapter(val seasonsList: ArrayList<Season>) : RecyclerView.Adapter<
         fun bind(season: Season, position: Int) {
             val context = binding.root.context
 
-            binding.authorName.text = String.format("Season %1s",season.number!!.toString())
-            binding.episodesText.text = String.format("Episodes %1s",season.episodeOrder!!.toString())
+            binding.authorName.text = String.format("Season %1s", if(season.number!=null) season.number else "")
+            binding.episodesText.text = String.format("Episodes %1s", if(season.episodeOrder!=null) season.episodeOrder else "")
 
             var url: String? = null
             if(season.image != null){
@@ -53,7 +52,7 @@ class SeasonsAdapter(val seasonsList: ArrayList<Season>) : RecyclerView.Adapter<
 
             Glide.with(context)
                 .load(url)
-                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.AUTOMATIC))
+                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL))
                 .placeholder(R.drawable.logo_splash)
                 .transition(GenericTransitionOptions.with(R.anim.anim_fadein))
                 .into(binding.avatar)

@@ -34,7 +34,7 @@
             android:gravity="center"
             android:layout_marginTop="@dimen/d8"
             android:layout_height="wrap_content"
-            tools:text="Assac assimov" />
+            tools:text="Isaac asimov"  />
 
     </RelativeLayout>
 

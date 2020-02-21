@@ -28,7 +28,7 @@
             android:padding="@dimen/d8"
             android:background="@color/orange500aa"
             android:layout_height="wrap_content"
-            tools:text="Assac assimov" />
+            tools:text="Isaac asimov"  />
 
     </RelativeLayout>
 

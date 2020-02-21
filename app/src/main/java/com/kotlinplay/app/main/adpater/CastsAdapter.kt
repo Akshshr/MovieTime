@@ -48,8 +48,8 @@ class CastsAdapter(val castList: ArrayList<Cast>) : RecyclerView.Adapter<CastsAd
             val url = cast.person.image!!.medium
             Glide.with(context)
                 .load(url)
-                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.AUTOMATIC).circleCrop())
-                .placeholder(R.drawable.logo_splash)
+                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL).circleCrop())
+                .placeholder(R.drawable.logo_splash_mini)
                 .transition(GenericTransitionOptions.with(R.anim.anim_fadein))
                 .into(binding.avatar)
 
