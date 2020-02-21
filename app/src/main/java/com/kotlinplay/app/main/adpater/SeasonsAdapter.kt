@@ -30,7 +30,7 @@ class SeasonsAdapter(val seasonsList: ArrayList<Season>) : RecyclerView.Adapter<
 
     //this method is binding the data on the list
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(seasonsList.get(position), position)
+        holder.bind(seasonsList[position], position)
     }
 
     //this method is giving the size of the list
@@ -41,7 +41,7 @@ class SeasonsAdapter(val seasonsList: ArrayList<Season>) : RecyclerView.Adapter<
     inner class ViewHolder(private val binding: RowSeasonBinding) : RecyclerView.ViewHolder(binding.getRoot()) {
 
         fun bind(season: Season, position: Int) {
-            val context = binding.getRoot().getContext()
+            val context = binding.root.context
 
             binding.authorName.text = String.format("Season %1s",season.number!!.toString())
             binding.episodesText.text = String.format("Episodes %1s",season.episodeOrder!!.toString())
@@ -57,7 +57,7 @@ class SeasonsAdapter(val seasonsList: ArrayList<Season>) : RecyclerView.Adapter<
                 .placeholder(R.drawable.logo_splash)
                 .transition(GenericTransitionOptions.with(R.anim.anim_fadein))
                 .into(binding.avatar)
-            if (position == seasonsList.size-1){
+            if (seasonsList.size > 1 && position == seasonsList.size - 1){
                 binding.latestSeason = true
             }
 
