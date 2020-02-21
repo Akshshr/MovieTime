@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="name"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/authorName"
+            android:layout_marginStart="@dimen/d4"
+            android:layout_marginEnd="@dimen/d4"
+            style="@style/Text.Bright.14spBold"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:padding="@dimen/d8"
+            android:background="@color/orange500aa"
+            android:layout_height="wrap_content"
+            tools:text="Assac assimov" />
+
+    </RelativeLayout>
+
+</layout>

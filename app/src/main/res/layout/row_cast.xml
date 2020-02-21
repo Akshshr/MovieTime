@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="chargerAddress"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?selectableItemBackground"
+        android:layout_width="@dimen/d120"
+        android:layout_height="@dimen/d120">
+
+        <ImageView
+            android:id="@+id/avatar"
+            android:layout_width="@dimen/d56"
+            android:layout_height="@dimen/d56"
+            android:layout_centerInParent="true"
+            />
+
+        <TextView
+            android:id="@+id/authorName"
+            style="@style/Text.Normal.10sp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/avatar"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/d8"
+            android:layout_height="wrap_content"
+            tools:text="Assac assimov" />
+
+    </RelativeLayout>
+
+</layout>
