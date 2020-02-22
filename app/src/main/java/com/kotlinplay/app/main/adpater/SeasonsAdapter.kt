@@ -11,6 +11,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.kotlinplay.R
 import com.kotlinplay.api.model.response.Season
 import com.kotlinplay.api.model.response.Show
+import com.kotlinplay.app.util.NA
 import com.kotlinplay.databinding.RowSeasonBinding
 import rx.Observable
 import rx.subjects.PublishSubject
@@ -42,8 +43,12 @@ class SeasonsAdapter(val seasonsList: ArrayList<Season>) : RecyclerView.Adapter<
         fun bind(season: Season, position: Int) {
             val context = binding.root.context
 
-            binding.authorName.text = String.format("Season %1s", if(season.number!=null) season.number else "")
-            binding.episodesText.text = String.format("Episodes %1s", if(season.episodeOrder!=null) season.episodeOrder else "")
+            binding.authorName.text = String.format("%1s %2s",
+                context.resources.getString(R.string.show_details_season),
+                if(season.number!=null) season.number else NA)
+            binding.episodesText.text = String.format("%1s %2s",
+                context.resources.getString(R.string.show_details_episodes),
+                if(season.episodeOrder!=null) season.episodeOrder else NA)
 
             var url: String? = null
             if(season.image != null){
@@ -56,11 +61,9 @@ class SeasonsAdapter(val seasonsList: ArrayList<Season>) : RecyclerView.Adapter<
                 .placeholder(R.drawable.logo_splash)
                 .transition(GenericTransitionOptions.with(R.anim.anim_fadein))
                 .into(binding.avatar)
-            if (seasonsList.size > 1 && position == seasonsList.size - 1){
-                binding.latestSeason = true
-            }
+            binding.latestSeason = seasonsList.size > 1 && position == seasonsList.size - 1
 
-            binding.parent.setOnClickListener { view ->  onSeasonClickSubject.onNext(season)  }
+            binding.parent.setOnClickListener { onSeasonClickSubject.onNext(season)  }
         }
     }
 

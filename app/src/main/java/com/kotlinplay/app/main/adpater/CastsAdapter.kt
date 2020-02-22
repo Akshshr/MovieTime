@@ -45,7 +45,10 @@ class CastsAdapter(val castList: ArrayList<Cast>) : RecyclerView.Adapter<CastsAd
 
             binding.authorName.text = cast.person!!.name
 
-            val url = cast.person.image!!.medium
+            var url: String? = null
+            if(cast.person.image != null){
+                url = cast.person.image.medium!!.toString()
+            }
             Glide.with(context)
                 .load(url)
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL).circleCrop())

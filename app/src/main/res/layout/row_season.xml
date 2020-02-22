@@ -13,7 +13,7 @@
 
     <RelativeLayout
         android:id="@+id/parent"
-        android:layout_width="@dimen/d120"
+        android:layout_width="@dimen/d160"
         android:layout_marginStart="@dimen/d32"
         android:layout_marginEnd="@dimen/d32"
         android:layout_height="wrap_content"
@@ -28,19 +28,20 @@
             <ImageView
                 android:id="@+id/avatar"
                 android:layout_width="wrap_content"
+                android:padding="@dimen/d6"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/todo" />
 
             <TextView
                 android:id="@+id/latestTag"
                 android:visibility="@{latestSeason ? View.VISIBLE : View.GONE}"
-                style="@style/Text.Normal.10spBold"
+                style="@style/Text.Normal.12spBold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:background="@color/orange500"
                 android:gravity="end"
-                android:padding="@dimen/d4"
+                android:padding="@dimen/d6"
                 android:text="@string/show_details_latest_tag"
                 tools:text="LATEST" />
 
@@ -51,7 +52,7 @@
             android:gravity="center"
             android:layout_below="@+id/avatarLayout"
             android:layout_width="match_parent"
-            android:padding="@dimen/d16"
+            android:padding="@dimen/d12"
             android:layout_marginTop="@dimen/d22"
             android:layout_height="wrap_content">
 
@@ -67,6 +68,7 @@
             style="@style/Text.Normal.10sp"
             android:layout_width="wrap_content"
             android:layout_marginTop="@dimen/d4"
+            android:layout_marginBottom="@dimen/d4"
             android:layout_height="wrap_content"
             tools:text="Isaac asimov"  />
 
