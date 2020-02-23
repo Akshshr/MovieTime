@@ -100,7 +100,6 @@ class MainActivity : BaseActivity() {
 
 
     private fun onAllShows(it: ArrayList<Show>) {
-            TransitionManager.beginDelayedTransition(binding.showsRecyclerView)
             displayingShows = true
             allShows = it
             adapter = ShowsAdapter(it)
