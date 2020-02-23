@@ -43,14 +43,10 @@ class CastsAdapter(val castList: ArrayList<Cast>) : RecyclerView.Adapter<CastsAd
         fun bind(cast: Cast) {
             val context = binding.getRoot().getContext()
 
-            binding.authorName.text = cast.person!!.name
+            binding.authorName.text = cast.person?.name
 
-            var url: String? = null
-            if(cast.person.image != null){
-                url = cast.person.image.medium!!.toString()
-            }
             Glide.with(context)
-                .load(url)
+                .load(cast.person?.image?.medium)
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL).circleCrop())
                 .placeholder(R.drawable.logo_splash_mini)
                 .transition(GenericTransitionOptions.with(R.anim.anim_fadein))
@@ -60,6 +56,7 @@ class CastsAdapter(val castList: ArrayList<Cast>) : RecyclerView.Adapter<CastsAd
         }
     }
 
+    //observable for adapter clicks
     fun getCastObservable(): Observable<Cast> {
         return onCastSubject.asObservable()
     }

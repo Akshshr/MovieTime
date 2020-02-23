@@ -50,13 +50,8 @@ class SeasonsAdapter(val seasonsList: ArrayList<Season>) : RecyclerView.Adapter<
                 context.resources.getString(R.string.show_details_episodes),
                 if(season.episodeOrder!=null) season.episodeOrder else NA)
 
-            var url: String? = null
-            if(season.image != null){
-                url = season.image.medium!!.toString()
-            }
-
             Glide.with(context)
-                .load(url)
+                .load(season.image?.medium)
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.ALL))
                 .placeholder(R.drawable.logo_splash)
                 .transition(GenericTransitionOptions.with(R.anim.anim_fadein))
@@ -67,6 +62,7 @@ class SeasonsAdapter(val seasonsList: ArrayList<Season>) : RecyclerView.Adapter<
         }
     }
 
+    //observable for adapter clicks
     fun getSeasonClickObservable(): Observable<Season> {
         return onSeasonClickSubject.asObservable()
     }
