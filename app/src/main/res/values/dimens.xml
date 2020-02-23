@@ -1,0 +1,48 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">20dp</dimen>
+    <dimen name="activity_vertical_margin">32dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="d0">0dp</dimen>
+    <dimen name="d2">2dp</dimen>
+    <dimen name="d4">4dp</dimen>
+    <dimen name="d6">6dp</dimen>
+    <dimen name="d8">8dp</dimen>
+    <dimen name="d12">12dp</dimen>
+    <dimen name="d14">14dp</dimen>
+    <dimen name="d16">16dp</dimen>
+    <dimen name="d22">22dp</dimen>
+    <dimen name="d24">24dp</dimen>
+    <dimen name="d32">32dp</dimen>
+    <dimen name="d40">40dp</dimen>
+    <dimen name="d42">42dp</dimen>
+    <dimen name="d48">48dp</dimen>
+    <dimen name="d56">56dp</dimen>
+    <dimen name="d65">65dp</dimen>
+    <dimen name="d72">72dp</dimen>
+    <dimen name="d96">96dp</dimen>
+    <dimen name="d120">120dp</dimen>
+    <dimen name="d130">130dp</dimen>
+    <dimen name="d144">144dp</dimen>
+    <dimen name="d160">160dp</dimen>
+    <dimen name="d180">180dp</dimen>
+
+    <dimen name="d220">220dp</dimen>
+
+    <dimen name="dn4">-4dp</dimen>
+    <dimen name="dn8">-8dp</dimen>
+    <dimen name="dn10">-10dp</dimen>
+    <dimen name="dn20">-20dp</dimen>
+    <dimen name="dn30">-30dp</dimen>
+    <dimen name="dn60">-60dp</dimen>
+
+
+    <dimen name="dialog_width">340dp</dimen>
+    <dimen name="dialog_height">420dp</dimen>
+
+
+    <dimen name="internal_padding">12dp</dimen>
+    <dimen name="title_padding">16dp</dimen>
+
+</resources>

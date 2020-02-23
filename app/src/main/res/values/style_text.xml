@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Text">
+        <item name="android:textSize">@dimen/fontSize14</item>
+        <item name="android:textColor">@color/textPrimaryDark</item>
+    </style>
+
+    <style name="Text.Bright">
+        <item name="android:textColor">@color/textPrimaryBright</item>
+    </style>
+
+
+    <style name="Text.Link">
+        <item name="android:textSize">@dimen/fontSize14</item>
+        <item name="android:textColor">@color/blue600</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Text.Normal">
+        <item name="fontFamily">@font/product_sans_regular</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Dark">
+        <item name="fontFamily">@font/product_sans_regular</item>
+        <item name="android:textColor">@color/textPrimaryDark</item>
+    </style>
+
+
+    <style name="Text.Normal.10spBold">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">@dimen/fontSize10</item>
+    </style>
+
+    <style name="Text.Normal.12spBold">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">@dimen/fontSize12</item>
+    </style>
+
+    <style name="Text.Normal.14spBold">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">@dimen/fontSize14</item>
+    </style>
+
+    <style name="Text.Normal.16spBold">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">@dimen/fontSize16</item>
+    </style>
+
+    <style name="Text.Normal.18spBold">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">@dimen/fontSize18</item>
+    </style>
+
+    <style name="Text.Normal.22spBold">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">@dimen/fontSize22</item>
+    </style>
+
+    <style name="Text.Normal.32spBold">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">@dimen/fontSize32</item>
+    </style>
+
+    <style name="Text.Normal.44spBold">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">@dimen/fontSize44</item>
+    </style>
+
+
+
+    <style name="Text.Normal.10sp">
+        <item name="android:textSize">@dimen/fontSize10</item>
+    </style>
+
+    <style name="Text.Normal.12sp">
+        <item name="android:textSize">@dimen/fontSize12</item>
+    </style>
+
+    <style name="Text.Normal.14sp">
+        <item name="android:textSize">@dimen/fontSize14</item>
+    </style>
+
+    <style name="Text.Normal.16sp">
+        <item name="android:textSize">@dimen/fontSize16</item>
+    </style>
+
+    <style name="Text.Normal.18sp">
+        <item name="android:textSize">@dimen/fontSize18</item>
+    </style>
+
+    <style name="Text.Normal.22sp">
+        <item name="android:textSize">@dimen/fontSize22</item>
+    </style>
+
+    <style name="Text.Normal.32sp">
+        <item name="android:textSize">@dimen/fontSize32</item>
+    </style>
+
+
+
+    <style name="Text.Bright.10Bold">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">@dimen/fontSize10</item>
+    </style>
+
+    <style name="Text.Bright.12spBold">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">@dimen/fontSize12</item>
+    </style>
+
+    <style name="Text.Bright.14spBold">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">@dimen/fontSize14</item>
+    </style>
+
+    <style name="Text.Bright.16spBold">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">@dimen/fontSize16</item>
+    </style>
+
+    <style name="Text.Bright.20spBold">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">@dimen/fontSize20</item>
+    </style>
+
+    <style name="Text.Bright.24spBold">
+        <item name="fontFamily">@font/product_sans_bold</item>
+        <item name="android:textSize">@dimen/fontSize24</item>
+    </style>
+
+
+
+</resources>

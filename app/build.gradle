@@ -1,0 +1,114 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.kotlinplay"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "API_HOST", "\"http://api.tvmaze.com/\""
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    kapt 'com.android.databinding:compiler:3.1.4'
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+    //Testing
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.androidxTestEspresso"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:$rootProject.ext.androidxTestEspresso"
+
+    androidTestImplementation "androidx.test:runner:$rootProject.ext.androidXTest"
+    androidTestImplementation "androidx.test:core:$rootProject.ext.androidXTest"
+    androidTestImplementation "androidx.test.ext:junit-ktx:$rootProject.ext.androidXTest"
+
+    //Android X
+    implementation 'androidx.legacy:legacy-support-core-utils:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v13:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation "androidx.preference:preference:1.1.0"
+    annotationProcessor 'androidx.annotation:annotation:1.1.0'
+
+
+    //Android Architecture
+    implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.ext.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-reactivestreams:$rootProject.ext.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$rootProject.ext.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.ext.lifecycleVersion"
+
+    //Google material
+    implementation 'com.google.android.material:material:1.1.0'
+
+    //RX Java
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.f2prateek.rx.preferences:rx-preferences:1.0.2'
+
+    //Lottie
+    implementation "com.airbnb.android:lottie:$rootProject.ext.lottieVersion"
+
+    //Jota Time
+    implementation 'net.danlew:android.joda:2.10.3'
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava:$rootProject.ext.retrofitVersion"
+
+    //GSON
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'io.gsonfire:gson-fire:1.8.0'
+
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation('com.github.bumptech.glide:okhttp3-integration:4.9.0') {
+        exclude group: 'glide-parent'
+    }
+    implementation ("com.github.bumptech.glide:glide:4.9.0") {
+        exclude group: "com.android.support"
+    }
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation ("com.github.bumptech.glide:glide:4.9.0@aar") {
+        transitive = true
+    }
+
+    //Bottom Bar
+    implementation 'com.gauravk.bubblenavigation:bubblenavigation:1.0.4'
+
+    //Ratings bar
+    implementation 'me.zhanghai.android.materialratingbar:library:1.4.0'
+
+
+}

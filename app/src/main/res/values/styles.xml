@@ -1,0 +1,62 @@
+<resources>
+
+    <style name="AppWidget"></style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+<!--        <item name="colorControlHighlight">@color/blueSettings</item>-->
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+    </style>
+
+
+    <style name="MySideBarText" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+    </style>
+
+
+    <style name="AppTheme.Button">
+        <item name="android:paddingStart">@dimen/d16</item>
+        <item name="android:paddingEnd">@dimen/d16</item>
+        <item name="android:drawablePadding">@dimen/d12</item>
+        <item name="android:background">@drawable/bg_button</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="AppTheme.Button.Bright">
+        <item name="android:background">@drawable/bg_button_dark</item>
+        <item name="android:textColor">@color/textPrimaryDark</item>
+    </style>
+
+
+    <style name="AppWidget.AppRatingBar" parent="Widget.AppCompat.RatingBar">
+        <item name="colorAccent">@color/orange500</item>
+        <item name="android:minHeight">15dp</item>
+        <item name="android:maxHeight">15dp</item>
+        <item name="android:colorControlNormal">@color/gray300</item>
+    </style>
+
+    <style name="AppWidget.EditText">
+        <item name="android:drawablePadding">@dimen/d22</item>
+        <item name="android:layout_marginEnd">@dimen/d32</item>
+        <item name="android:layout_marginStart">@dimen/d32</item>
+        <item name="android:padding">@dimen/d16</item>
+        <item name="android:textColor">@color/textPrimaryBright</item>
+        <item name="android:background">@drawable/bg_search_bar</item>
+        <item name="android:fontFamily">@font/product_sans_bold</item>
+
+    </style>
+
+</resources>

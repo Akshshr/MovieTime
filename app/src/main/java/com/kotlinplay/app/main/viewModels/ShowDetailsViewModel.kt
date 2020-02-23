@@ -1,20 +1,11 @@
 package com.kotlinplay.app.main.viewModels
 
-import android.app.Application
-import android.util.Log
-import androidx.annotation.NonNull
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.kotlinplay.R
 import com.kotlinplay.api.model.response.Cast
-import com.kotlinplay.api.model.response.SearchTermResponse
 import com.kotlinplay.api.model.response.Season
-import com.kotlinplay.api.model.response.Show
 import com.kotlinplay.app.KotlinPlayApplication
-import com.kotlinplay.app.base.BaseActivity
-import com.kotlinplay.app.main.MainActivity
 import rx.Observable
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
@@ -31,8 +22,6 @@ class ShowDetailsViewModel : ViewModel() {
         private var TAG = ShowDetailsViewModel::class.java.simpleName
     }
 
-
-    private lateinit var baseActivity: BaseActivity
     val application: KotlinPlayApplication by lazy {  KotlinPlayApplication.instance!! }
 
     fun burstFetchShowDetails(showId: String?) {
@@ -48,16 +37,10 @@ class ShowDetailsViewModel : ViewModel() {
     }
 
     private fun handleError(throwable: Throwable) {
-        //Tell Activity there is was an error
-        Log.d(TAG, "Error")
         containsError.postValue(throwable)
-
-
     }
 
     private fun doneLoading() {
-        //Tell activity loading is done
-        Log.d(TAG, "loading done")
         isLoading.postValue(false)
     }
 

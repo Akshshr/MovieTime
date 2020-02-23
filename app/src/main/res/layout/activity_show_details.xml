@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="loadingCast"
+            type="Boolean" />
+
+        <variable
+            name="loadingSeasons"
+            type="Boolean" />
+
+        <variable
+            name="showSeasonsLink"
+            type="Boolean" />
+
+        <variable
+            name="show"
+            type="com.kotlinplay.api.model.response.Show" />
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/highlight"
+    tools:context=".app.main.ShowDetailsActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                android:fitsSystemWindows="true"
+                app:contentScrim="@color/bgApp"
+                android:background="@color/bgApp"
+                tools:background="@color/highlight">
+
+                <ImageView
+                    android:id="@+id/headerImage"
+                    android:scaleType="centerCrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    android:contentDescription="@string/todo" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:background="@drawable/bg_view"
+            android:layout_marginStart="@dimen/d8"
+            android:layout_marginEnd="@dimen/d8"
+            app:behavior_overlapTop="@dimen/d72"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_alignParentTop="true"
+                    style="@style/Text.Bright.20spBold"
+                    android:layout_marginEnd="@dimen/d48"
+                    android:layout_width="wrap_content"
+                    android:layout_margin="@dimen/d16"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    tools:text="Westworld" />
+
+
+                <TextView
+                    android:id="@+id/showStatus"
+                    style="@style/Text.Bright.12spBold"
+                    android:layout_width="wrap_content"
+                    android:layout_marginStart="@dimen/d16"
+                    android:layout_below="@+id/title"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    tools:text="STATUS" />
+
+                <RelativeLayout
+                    android:id="@+id/ratingLayout"
+                    android:layout_below="@+id/showStatus"
+                    android:padding="@dimen/d16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/visitWebsite"
+                        android:drawableStart="@drawable/ic_tv"
+                        android:text="@string/show_details_external_button"
+                        style="@style/AppTheme.Button"
+                        android:layout_centerVertical="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                    <TextView
+                        android:id="@+id/ratingValue"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        style="@style/Text.Bright.14spBold"
+                        android:layout_width="wrap_content"
+                        android:layout_margin="@dimen/d8"
+                        android:padding="@dimen/d8"
+                        android:gravity="center"
+                        android:background="@drawable/bg_textview_stroke"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        tools:text="4.2"
+                        tools:ignore="RelativeOverlap" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:id="@+id/genereList"
+                    android:padding="@dimen/d16"
+                    android:layout_below="@+id/ratingLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/description"
+                    style="@style/Text.Normal.14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/genereList"
+                    android:layout_margin="@dimen/d16"
+                    android:maxLines="20"
+                    android:ellipsize="end"
+                    tools:text="Description with multiple lines" />
+
+                <View
+                    android:id="@+id/viewLine"
+                    android:layout_below="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginStart="@dimen/d16"
+                    android:layout_marginEnd="@dimen/d16"
+                    android:background="@color/white"
+                    android:alpha="0.2" />
+
+                <TextView
+                    android:id="@+id/castsHeader"
+                    style="@style/Text.Normal.14spBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/viewLine"
+                    android:layout_marginTop="@dimen/d16"
+                    android:layout_marginStart="@dimen/d16"
+                    android:layout_marginEnd="@dimen/d16"
+                    android:padding="@dimen/d4"
+                    android:text="@string/show_details_cast_header"
+                    tools:text="Cast" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/castRecyclerview"
+                    android:layout_below="@+id/castsHeader"
+                    android:scrollbars="horizontal"
+                    android:layout_width="match_parent"
+                    android:visibility="@{loadingCast ? View.GONE :  View.VISIBLE }"
+                    android:layout_height="match_parent">
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/castLottieLoading"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/castsHeader"
+                    android:visibility="@{loadingCast ? View.VISIBLE :  View.GONE }"
+                    app:lottie_autoPlay="true"
+                    app:lottie_fileName="lottie_loading.json"
+                    app:lottie_loop="true"
+                    app:lottie_scale="1" />
+
+                <View
+                    android:id="@+id/viewLine2"
+                    android:layout_below="@+id/castRecyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginStart="@dimen/d16"
+                    android:layout_marginEnd="@dimen/d16"
+                    android:layout_marginTop="@dimen/d12"
+                    android:background="@color/white"
+                    android:alpha="0.2" />
+
+                <TextView
+                    android:id="@+id/seasonsHeader"
+                    style="@style/Text.Normal.14spBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/viewLine2"
+                    android:layout_margin="@dimen/d16"
+                    android:padding="@dimen/d4"
+                    android:text="@string/show_details_seasons_header"
+                    tools:text="Seasons: " />
+
+                <TextView
+                    android:id="@+id/scrollShortCut"
+                    style="@style/Text.Link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?selectableItemBackground"
+                    android:layout_below="@+id/viewLine2"
+                    android:padding="@dimen/d4"
+                    android:layout_alignParentEnd="true"
+                    android:layout_margin="@dimen/d16"
+                    android:visibility="@{showSeasonsLink ? View.VISIBLE :  View.GONE}"
+                    android:text="@string/show_details_scroll_season"
+                    tools:text="See latest: " />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/seasonsRecyclerView"
+                    android:layout_below="@+id/seasonsHeader"
+                    android:scrollbars="horizontal"
+                    android:focusable="false"
+                    android:layout_marginBottom="@dimen/d12"
+                    android:layout_width="match_parent"
+                    android:visibility="@{loadingSeasons ? View.GONE :  View.VISIBLE }"
+                    android:layout_height="match_parent">
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <Button
+                    android:id="@+id/visitShowWebsite"
+                    android:text="@string/show_details_external_button_main"
+                    android:drawableStart="@drawable/ic_link"
+                    style="@style/AppTheme.Button.Bright"
+                    android:layout_below="@+id/seasonsRecyclerView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/d40"
+                    android:layout_centerHorizontal="true"
+                    />
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

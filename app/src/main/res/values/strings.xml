@@ -1,0 +1,33 @@
+<resources>
+
+    <string name="app_name">Movie Time</string>
+    <string name="app_caption">What are we watching tonight?!</string>
+
+    <!--    MAIN ACTIVITY-->
+    <string name="main_title">What are you watching tonight?</string>
+    <string name="main_searchbar">Search....</string>
+
+    <!--    SHOW DETAILS ACTIVITY-->
+    <string name="show_details_external_button">Check it out!</string>
+    <string name="show_details_external_button_main">View show</string>
+
+    <string name="show_details_cast_header">Cast:</string>
+    <string name="show_details_seasons_header">Seasons:</string>
+    <string name="show_details_latest_tag">LATEST</string>
+    <string name="show_details_scroll_season"><u>See latest</u></string>
+
+    <string name="show_details_season">Season</string>
+    <string name="show_details_episodes">Episodes</string>
+    <string name="show_details_status">Status: "\"%1s"\"</string>
+
+
+    <!--    ACCESSIBILITY-->
+    <string name="todo">Image</string>
+
+    <!--    ERROR-->
+    <string name="cast_seasons_error">Error fetching casts/seasons</string>
+    <string name="search_error">Search field cannot be blank</string>
+    <string name="generic_error">Something went wrong</string>
+    <string name="no_results_error">No results found</string>
+
+</resources>

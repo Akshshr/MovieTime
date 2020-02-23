@@ -1,15 +1,10 @@
 package com.kotlinplay.app.main.viewModels
 
-import android.app.Application
-import androidx.annotation.NonNull
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.kotlinplay.api.model.response.SearchTermResponse
 import com.kotlinplay.api.model.response.Show
 import com.kotlinplay.app.KotlinPlayApplication
-import com.kotlinplay.app.base.BaseActivity
 import com.kotlinplay.app.main.MainActivity
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
@@ -22,8 +17,6 @@ class MainActivityViewModel : ViewModel() {
     val isLoading = MutableLiveData<Boolean>()
     val containsError = MutableLiveData<Throwable>()
 
-
-    private lateinit var baseActivity: BaseActivity
     val application: KotlinPlayApplication by lazy {  KotlinPlayApplication.instance!! }
 
     fun getShows() {
@@ -54,10 +47,12 @@ class MainActivityViewModel : ViewModel() {
             })
     }
 
+
     private fun onSearchResponse(it: ArrayList<SearchTermResponse>) {
         isLoading.postValue(false)
         searchTermMLiveData.postValue(it)
     }
+
 
     private fun onShowResponse(it: ArrayList<Show>) {
         isLoading.postValue(false)
