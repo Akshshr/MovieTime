@@ -83,6 +83,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun onSearchResponse(it: ArrayList<SearchTermResponse>) {
+        displayingShows = false
         if(it.size<1){
             showToast(resources.getString(R.string.no_results_error))
             return

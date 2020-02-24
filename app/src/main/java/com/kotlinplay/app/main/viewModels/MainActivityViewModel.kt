@@ -36,7 +36,6 @@ class MainActivityViewModel : ViewModel() {
 
 
     fun searchQuery(searchQuery: String) {
-        MainActivity.displayingShows = false
         application.getApiObject().getDataService()
             .getSearchTerm(searchQuery)
             .subscribeOn(Schedulers.io())
