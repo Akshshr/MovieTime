@@ -92,9 +92,7 @@ class MainActivity : BaseActivity() {
             searchResponseList.add(it.show!!)
         }
         hideKeyboard()
-        adapter = ShowsAdapter(searchResponseList)
-        binding.showsRecyclerView.adapter = adapter
-        setUpAdapterListeners()
+        onAllShows(searchResponseList)
     }
 
 
