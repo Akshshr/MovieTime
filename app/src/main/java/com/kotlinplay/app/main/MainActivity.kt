@@ -2,7 +2,6 @@ package com.kotlinplay.app.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.transition.TransitionManager
 import android.view.inputmethod.EditorInfo
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -29,10 +28,10 @@ class MainActivity : BaseActivity() {
 
     lateinit var adapter:ShowsAdapter
     private lateinit var mainActivityViewModel: MainActivityViewModel
+    var allShows: ArrayList<Show> = ArrayList()
 
     companion object{
         private var TAG = MainActivity::class.java.simpleName
-        var allShows: ArrayList<Show> = ArrayList()
         var displayingShows : Boolean = true
     }
 
@@ -51,7 +50,7 @@ class MainActivity : BaseActivity() {
 
         adapter = ShowsAdapter(mutableListOf<Show>() as ArrayList<Show>)
         binding.appBar.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { _, verticalOffset ->
-            if (verticalOffset == -binding.appBar.getHeight() + binding.appBar.getHeight()) binding.fab.hide() else binding.fab.show()
+            if (verticalOffset == -binding.appBar.height + binding.appBar.height) binding.fab.hide() else binding.fab.show()
         })
 
         binding.fab.setOnClickListener {
@@ -88,12 +87,12 @@ class MainActivity : BaseActivity() {
             showToast(resources.getString(R.string.no_results_error))
             return
         }
-        val searhShowList: ArrayList<Show> = ArrayList()
+        val searchResponseList: ArrayList<Show> = ArrayList()
         it.forEach {
-            searhShowList.add(it.show!!)
+            searchResponseList.add(it.show!!)
         }
         hideKeyboard()
-        adapter = ShowsAdapter(searhShowList)
+        adapter = ShowsAdapter(searchResponseList)
         binding.showsRecyclerView.adapter = adapter
         setUpAdapterListeners()
     }
