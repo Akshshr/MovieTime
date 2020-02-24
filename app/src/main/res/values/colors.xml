@@ -4,12 +4,8 @@
     <color name="colorPrimaryDark">#000</color>
     <color name="colorAccent">@color/highlight</color>
 
-
     <color name="bgApp">#2e3847</color>
-
-
     <color name="highlight">#6c737e</color>
-
 
     <color name="buttonBright">#D8D8D8</color>
     <color name="white">#FFFFFF</color>
@@ -36,7 +32,6 @@
     <color name="green700">#0c726b</color>
 
     <color name="colorPrimaryTransparent">#0000C9EF</color>
-    <color name="icon_tint">#595A5C</color>
 
     <color name="red300">#F39FA1</color>
     <color name="red500">#BE2829</color>
@@ -51,7 +46,7 @@
     <color name="gray900">#212121</color>
 
     <color name="orange500">#FF9D02</color>
-    <color name="orange500aa">#35FF9D02</color>
+    <color name="orange500a40">#40FF9D02</color>
 
     <color name="textPrimaryDark">#FF505050</color>
     <color name="textSecondaryDark">#70505050</color>

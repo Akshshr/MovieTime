@@ -12,8 +12,10 @@
 
     <style name="Text.Link">
         <item name="android:textSize">@dimen/fontSize14</item>
-        <item name="android:textColor">@color/blue600</item>
+        <item name="android:textColor">@color/blue500</item>
+        <item name="android:fontFamily">@font/product_sans_regular</item>
         <item name="android:textAllCaps">true</item>
+        <item name="android:drawable">@drawable/ic_link</item>
     </style>
 
     <style name="Text.Normal">

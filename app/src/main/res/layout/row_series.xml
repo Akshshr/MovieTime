@@ -62,7 +62,7 @@
                 android:maxLines="2"
                 android:lineSpacingMultiplier="1.2"
                 android:layout_height="wrap_content"
-                tools:text="I have ahd adreamI have ahd a dream" />
+                tools:text="I have a dream I have a dream" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"

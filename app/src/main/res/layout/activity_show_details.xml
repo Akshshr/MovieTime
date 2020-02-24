@@ -95,7 +95,7 @@
                     android:layout_below="@+id/title"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    tools:text="STATUS" />
+                    tools:text="STATUS: Something" />
 
                 <RelativeLayout
                     android:id="@+id/ratingLayout"
@@ -131,6 +131,7 @@
 
                 </RelativeLayout>
 
+                <!-- Genres list is inflated into this-->
                 <LinearLayout
                     android:orientation="horizontal"
                     android:id="@+id/genereList"

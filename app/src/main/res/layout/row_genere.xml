@@ -16,14 +16,13 @@
 
         <TextView
             android:id="@+id/authorName"
-            android:layout_marginStart="@dimen/d4"
             android:layout_marginEnd="@dimen/d4"
             style="@style/Text.Bright.14spBold"
             android:layout_width="wrap_content"
             android:layout_centerInParent="true"
             android:gravity="center"
             android:padding="@dimen/d8"
-            android:background="@color/orange500aa"
+            android:background="@color/orange500a40"
             android:layout_height="wrap_content"
             tools:text="Isaac asimov"  />
 
