@@ -5,9 +5,6 @@
     <data>
         <import type="android.view.View"/>
 
-        <variable
-            name="chargerAddress"
-            type="String" />
     </data>
 
     <RelativeLayout
