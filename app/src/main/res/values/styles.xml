@@ -18,12 +18,6 @@
         <item name="android:windowBackground">@drawable/bg_splash</item>
     </style>
 
-
-    <style name="MySideBarText" parent="android:Widget.TextView">
-        <item name="android:fontFamily">@font/product_sans_regular</item>
-    </style>
-
-
     <style name="AppTheme.Button">
         <item name="android:paddingStart">@dimen/d16</item>
         <item name="android:paddingEnd">@dimen/d16</item>

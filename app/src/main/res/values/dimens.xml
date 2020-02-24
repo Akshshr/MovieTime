@@ -31,16 +31,6 @@
     <dimen name="d220">220dp</dimen>
 
     <dimen name="dn4">-4dp</dimen>
-    <dimen name="dn8">-8dp</dimen>
-    <dimen name="dn10">-10dp</dimen>
-    <dimen name="dn20">-20dp</dimen>
-    <dimen name="dn30">-30dp</dimen>
-    <dimen name="dn60">-60dp</dimen>
-
-
-    <dimen name="dialog_width">340dp</dimen>
-    <dimen name="dialog_height">420dp</dimen>
-
 
     <dimen name="internal_padding">12dp</dimen>
     <dimen name="title_padding">16dp</dimen>
